@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0f0e15">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="Tu top de Spotify en una card para compartir: artistas y tema del período, generada en tu navegador. Sin cuentas ni datos guardados.">
+<title>mes. Tu Spotify en una card</title>
+<link rel="canonical" href="https://lucasramos.uy/mes/">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://lucasramos.uy/brand/kit-fonts.css">
+<link rel="stylesheet" href="https://lucasramos.uy/brand/kit-base.css">
+<script src="https://lucasramos.uy/brand/kit/kit-header.js" defer></script>
+<script src="https://lucasramos.uy/brand/kit/kit-footer.js" defer></script>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<kit-header producto="mes" href="/mes/" acento="#f26a1b" fondo="#0f0e15" tinta="#f1eee6" linea="#2a2731" meta-color="#a8a29a" meta="SPOTIFY / CARD"></kit-header>
+<main>
+  <section class="intro">
+    <span class="eyebrow">01 / TU MÚSICA, EN UNA IMAGEN</span>
+    <h1>Tu Spotify, <em>en una card.</em></h1>
+    <p>Conectá tu cuenta, elegí el período y descargá una imagen con tu top: cinco artistas y tu tema. Se genera acá mismo, en tu navegador. Nada se guarda ni se sube a ningún lado.</p>
+  </section>
+
+  <section id="conectar" class="panel" hidden>
+    <button id="conectar-btn" class="btn principal" type="button">Conectar Spotify</button>
+    <p class="nota">Spotify te pide permiso de lectura de tu top. La conexión vive solo en esta pestaña: cerrás y se borra.</p>
+  </section>
+
+  <section id="generar" class="panel" hidden>
+    <div class="controles">
+      <div class="grupo">
+        <span class="eyebrow">02 / PERÍODO</span>
+        <div id="periodos" class="segmentos" role="group" aria-label="Período"></div>
+      </div>
+      <div class="grupo">
+        <span class="eyebrow">03 / FORMATO</span>
+        <div id="formatos" class="segmentos" role="group" aria-label="Formato"></div>
+      </div>
+      <button id="descargar" class="btn principal" type="button" disabled>Descargar PNG</button>
+      <p class="estado" id="estado" role="status"></p>
+      <button id="salir" class="btn fantasma" type="button">Desconectar</button>
+    </div>
+    <figure class="salida">
+      <canvas id="preview" width="1080" height="1920" aria-label="Vista previa de tu card"></canvas>
+    </figure>
+  </section>
+
+  <section id="aviso" class="panel" hidden>
+    <p id="aviso-texto" class="nota"></p>
+    <button class="btn principal" type="button" onclick="location.reload()">Volver a intentar</button>
+  </section>
+</main>
+<kit-footer fondo="#0f0e15" tinta="#a8a29a" linea="#2a2731" hover="#f1eee6" links="GitHub=https://github.com/lucasramosuy/mes"></kit-footer>
+<noscript><p class="nota" style="padding:20px">Necesitás JavaScript para generar tu card.</p></noscript>
+<script type="module" src="./app.mjs"></script>
+</body>
+</html>
