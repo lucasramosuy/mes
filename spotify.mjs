@@ -1,7 +1,7 @@
 // Conexión con Spotify: PKCE de cliente público, sin secret ni backend.
 // El token vive solo en sessionStorage de esta pestaña; nada sale del navegador.
 
-export const CLIENT_ID = 'SPOTIFY_CLIENT_ID_PENDIENTE'; // app de Wrapped (developer.spotify.com)
+export const CLIENT_ID = 'debb4dc9ac954ab9b85ab30d97ac7206'; // app de Wrapped (developer.spotify.com), mismo patrón que bot-personal
 export const SCOPES = 'user-top-read';
 
 export const PERIODOS = [
